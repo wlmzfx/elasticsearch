@@ -1,5 +1,8 @@
 FROM docker.elastic.co/elasticsearch/elasticsearch:6.2.1
 
+VOLUMN /usr/share/elasticsearch/config
+VOLUME /usr/share/elasticsearch/data
+
 WORKDIR /usr/share/elasticsearch
 
 USER 1000
@@ -9,6 +12,4 @@ RUN elasticsearch-plugin install --batch https://artifacts.elastic.co/downloads/
 RUN elasticsearch-plugin install --batchhttps://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.2.1/elasticsearch-analysis-ik-6.2.1.zip
 
 
-VOLUME /usr/share/elasticsearch/data
-VOLUMN /usr/share/elasticsearch/config
 
