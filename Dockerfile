@@ -1,6 +1,6 @@
 FROM docker.elastic.co/elasticsearch/elasticsearch:6.2.1
 
-VOLUMN /usr/share/elasticsearch/config
+VOLUME /usr/share/elasticsearch/config
 VOLUME /usr/share/elasticsearch/data
 
 WORKDIR /usr/share/elasticsearch
