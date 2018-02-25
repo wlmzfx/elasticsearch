@@ -11,5 +11,6 @@ RUN elasticsearch-plugin install --batch https://artifacts.elastic.co/downloads/
 
 RUN elasticsearch-plugin install --batch https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.2.1/elasticsearch-analysis-ik-6.2.1.zip
 
-COPY --chown=1000:0 analysis-ik config/
+COPY analysis-ik config/
+RUN chown -R 1000:0 config/analysis-ik
 
