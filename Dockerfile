@@ -9,6 +9,10 @@ USER elasticsearch
 
 COPY *.zip ./
 
+COPY --chown=elasticsearch:elasticsearch elasticsearch.yml config/elasticsearch.yml
+COPY --chown=elasticsearch:elasticsearch jvm.options config/jvm.options
+COPY --chown=elasticsearch:elasticsearch log4j2.properties config/log4j2.properties
+
 RUN elasticsearch-plugin install file://$PWD/repository-hdfs-6.2.1.zip
 RUN elasticsearch-plugin install file://$PWD/elasticsearch-analysis-ik-6.2.1.zip
 
