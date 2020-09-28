@@ -1,4 +1,4 @@
-FROM docker.elastic.co/elasticsearch/elasticsearch:6.4.3
+FROM docker.elastic.co/elasticsearch/elasticsearch-oss:6.4.3
 
 VOLUME /usr/share/elasticsearch/config
 VOLUME /usr/share/elasticsearch/data
